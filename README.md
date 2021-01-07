@@ -1,9 +1,9 @@
 # FRE
 
-Required:
-OpenGL
-GLAD
-SDL
-GLM Library
-Assimp
+Required: 
+OpenGL,
+GLAD,
+SDL,
+GLM Library,
+Assimp,
 Stbimage
