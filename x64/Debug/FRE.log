@@ -1,0 +1,17 @@
+﻿  Level1Physics.cpp
+C:\Programming\C++\OpenGL Projects\FRE\FRE\src\Camera\Camera.h(96,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Programming\C++\OpenGL Projects\FRE\FRE\src\Camera\Camera.h(97,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Programming\C++\OpenGL Projects\FRE\FRE\src\Camera\Camera.h(98,36): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  FRE.vcxproj -> C:\Programming\C++\OpenGL Projects\FRE\x64\Debug\FRE.exe
