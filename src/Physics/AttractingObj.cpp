@@ -29,12 +29,15 @@ AttractingObj::AttractingObj(
 }
 
 
-
+//assuming e = 0;
 void AttractingObj::CalculateInitialVelocity(AttractingObj* oObject, glm::dvec3 _forceVector, glm::dvec3 _dir)
 {
 	double distance = length(oObject->GetPos() - this->GetPos());
 	rigidBody->SetVel(sqrt((1 / this->rigidBody->GetMass()) * length(_forceVector) * distance) * _dir);
 }
+
+//for elliptical orbits
+
 
 void AttractingObj::Update(double dt, int _timeStep)
 {

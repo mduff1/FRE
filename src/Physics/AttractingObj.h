@@ -17,6 +17,8 @@ public:
 
 	void CalculateInitialVelocity(AttractingObj* oObject, glm::dvec3 _forceVector, glm::dvec3 _dir);
 
+	//for elliptical orbits
+	//void CalculateInitialVelocity(AttractingObj* oObject, )
 
 	virtual void Update(double dt, int _timeStep) override;
 
