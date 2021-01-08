@@ -15,7 +15,7 @@ void Level1::load()
 		vCams.push_back(cam);
 	}
 
-	//Cube* cube(new Cube("Carbon_03.bmp", glm::dvec3(0.0, 0.0, 0.0), glm::dvec4(1.0, 0.0, 1.0, 0.0), 100.0));
+	//Cube* cube(new Cube("container.jpg", glm::dvec3(0.0, 0.0, 0.0), glm::dvec4(1.0, 0.0, 1.0, 0.0), 10000.0));
 	//vObjects.push_back(cube);
 
 	//skybox
