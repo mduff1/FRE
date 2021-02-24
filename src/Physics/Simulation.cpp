@@ -15,9 +15,13 @@ Simulation::~Simulation()
 }
 
 
-void Simulation::Update(double dt, double t)
+void Simulation::Update(double _dt)
 {
-	curPE->Update(dt, t);
+	if (!isPaused)
+	{
+		curPE->Update(_dt, runTime);
+		runTime += _dt;
+	}
 }
 
 void Simulation::LoadEnvironment(int i)

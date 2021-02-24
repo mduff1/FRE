@@ -1,7 +1,7 @@
 #include "nonAttractingObj.h"
 
 
-void nonAttractingObj::Update(double dt, int _timeStep)
+void nonAttractingObj::Update(double _dt, int _timeStep)
 {
 
 }

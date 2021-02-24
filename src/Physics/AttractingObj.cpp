@@ -7,11 +7,14 @@ AttractingObj::AttractingObj(
 	glm::dvec3 _pos,
 	glm::dvec4 _rot,
 	double _scale,
+	double _radius,
 	RigidBody::rigBodAttributes _attrib)
 {
 	pos = _pos;
 	rotation = _rot;
 	scale = _scale;
+	radius = _radius;
+
 
 	//position
 	pos = model[3] = glm::dvec4(pos, 1.0f);
@@ -39,7 +42,7 @@ void AttractingObj::CalculateInitialVelocity(AttractingObj* oObject, glm::dvec3 
 //for elliptical orbits
 
 
-void AttractingObj::Update(double dt, int _timeStep)
+void AttractingObj::Update(double _dt, int _timeStep)
 {
 	
 

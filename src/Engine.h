@@ -30,6 +30,12 @@ public:
 	int screenW;
 	int screenH;
 
+	void gotoxy(int x, int y) {
+		COORD coord;
+		coord.X = x; coord.Y = y;
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+		return;
+	};
 
 private:
 
@@ -39,7 +45,11 @@ private:
 	void clear();
 
 	bool isRunning;
+
+	//physics
 	bool simulationRun;
+
+
 	int sHeight = 680;
 	int sWidth = int((16.0 / 9.0) * sHeight);
 

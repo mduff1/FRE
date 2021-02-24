@@ -23,7 +23,7 @@ void Renderer::Render(double dt, std::vector<PhysObj*> _vPObjects)
 	glEnable(GL_DEPTH_CLAMP);
 
 	curScene->Update(dt, _vPObjects);
-	
+
 }
 
 void Renderer::UpdateCamRot(int mx, int my)

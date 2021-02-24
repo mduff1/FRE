@@ -20,7 +20,7 @@ public:
 
 	~nonAttractingObj() {};
 
-	virtual void Update(double dt, int _timeStep) override;
+	virtual void Update(double _dt, int _timeStep) override;
 
 	RigidBody* rigidBody;
 

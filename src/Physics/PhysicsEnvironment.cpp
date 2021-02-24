@@ -53,11 +53,22 @@ glm::dvec3 PhysicsEnvironment::CalculateForceDirection(AttractingObj* object1, A
 	return normalize(glm::dvec3(object2->GetPos() - object1->GetPos()));
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//oribital calculations
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void  PhysicsEnvironment::GetSemiMajorAxis(AttractingObj* object, AttractingObj* centerObject)
+{
+	double distance = length(object->GetPos() - centerObject->GetPos());
+	object->rigidBody->SetEcc(1 / (2 / (length((object->GetPos() - centerObject->GetPos()))) - pow(length(object->rigidBody->GetVel()), 2) / (gravitationalConstant * solarMass)));
+}
 
 
-void PhysicsEnvironment::Update(double dt, double t)
+
+
+
+
+
+void PhysicsEnvironment::Update(double dt, float runTime)
 {
 
 	//physics objects
@@ -82,6 +93,7 @@ void PhysicsEnvironment::Update(double dt, double t)
 		
 		vAObjects[i]->rigidBody->ApplyForce(totalForce);
 		vAObjects[i]->Update(dt, timeStep);
+		GetSemiMajorAxis(vAObjects[i], vAObjects[0]);
 
 	}
 
@@ -92,7 +104,6 @@ void PhysicsEnvironment::Update(double dt, double t)
 	}
 
 
-
 	//console updates
 	gotoxy(0, 1);
 	std::cout << std::endl;
@@ -100,35 +111,72 @@ void PhysicsEnvironment::Update(double dt, double t)
 	std::cout << "###########################################################################################" << std::endl;
 	
 	
-	std::cout << "Solar Total Velocity: " << length(vAObjects[0]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Solar Total Velocity: " << length(vAObjects[0]->rigidBody->GetVel()) / 1000.0 << " km/s " << "" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
 	std::cout << "Mercury Total Velocity: " << length(vAObjects[1]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Venus Total Velocity: " << length(vAObjects[2]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Earth Total Velocity: " << length(vAObjects[3]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Mars Total Velocity: " << length(vAObjects[4]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Jupiter Total Velocity: " << length(vAObjects[5]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Saturn Total Velocity: " << length(vAObjects[6]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Uranus Total Velocity: " << length(vAObjects[7]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	//std::cout << "Neptune Total Velocity: " << length(vAObjects[8]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
-	
-	std::cout << std::endl;
-	
-	//////////////////////////////////////////////////////////////////////
-	std::cout << std::endl;
-	
 	std::cout << "Distance Between Mercury and Sun: " << length((vAObjects[1]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Venus and Sun: " << length((vAObjects[2]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Earth and Sun: " << length((vAObjects[3]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Mars and Sun: " << length((vAObjects[4]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Jupiter and Sun: " << length((vAObjects[5]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Saturn and Sun: " << length((vAObjects[6]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Uranus and Sun: " << length((vAObjects[7]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	//std::cout << "Distance Between Neptune and Sun: " << length((vAObjects[8]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
-	
+	std::cout << "Mercury Semi-Major Axis: " << vAObjects[1]->rigidBody->GetEcc() / AU << " Au" << std::endl;
 	//////////////////////////////////////////////////////////////////////
 	std::cout << std::endl;
-	
-	std::cout << "Simulation Time : " << t << " s" << std::endl;
+
+
+	std::cout << "Venus Total Velocity: " << length(vAObjects[2]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Venus and Sun: " << length((vAObjects[2]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Venus Semi-Major Axis: " << vAObjects[2]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Earth Total Velocity: " << length(vAObjects[3]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Earth and Sun: " << length((vAObjects[3]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Earth Semi-Major Axis: " << vAObjects[3]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Mars Total Velocity: " << length(vAObjects[4]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Mars and Sun: " << length((vAObjects[4]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Mars Semi-Major Axis: " << vAObjects[4]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Jupiter Total Velocity: " << length(vAObjects[5]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Jupiter and Sun: " << length((vAObjects[5]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Jupiter Semi-Major Axis: " << vAObjects[5]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Saturn Total Velocity: " << length(vAObjects[6]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Saturn and Sun: " << length((vAObjects[6]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Saturn Semi-Major Axis: " << vAObjects[6]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Uranus Total Velocity: " << length(vAObjects[7]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Uranus and Sun: " << length((vAObjects[7]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Uranus Semi-Major Axis: " << vAObjects[7]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+
+	std::cout << "Neptune Total Velocity: " << length(vAObjects[8]->rigidBody->GetVel()) / 1000.0 << " km/s " << std::endl;
+	std::cout << "Distance Between Neptune and Sun: " << length((vAObjects[8]->GetPos() - vAObjects[0]->GetPos())) / AU << " Au" << std::endl;
+	std::cout << "Neptune Semi-Major Axis: " << vAObjects[8]->rigidBody->GetEcc() / AU << " Au" << std::endl;
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
+	std::cout << "Simulation Time : " << runTime << " s" << std::endl;
 	//std::cout << "Elapsed Time : " << SDL_GetTicks() / 1000.0 << " s" << std::endl;
+
+	//////////////////////////////////////////////////////////////////////
+	std::cout << std::endl;
+
 
 	std::cout << "Simulation Speed : " << timeStep << " s/s" << std::endl;
 	
@@ -139,5 +187,4 @@ void PhysicsEnvironment::Update(double dt, double t)
 	
 	
 	gotoxy(0, 2);
-
 }

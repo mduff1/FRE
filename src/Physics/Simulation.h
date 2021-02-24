@@ -15,10 +15,13 @@ public:
 	~Simulation();
 	void LoadEnvironment(int i);
 
-	virtual void Update(double dt, double t);
+	virtual void Update(double dt);
 
 	PhysicsEnvironment* curPE;
 
+	bool isPaused = true;
+
+	float runTime = 0.0f;
 
 protected:
 

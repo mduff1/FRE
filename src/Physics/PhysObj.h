@@ -25,11 +25,12 @@ public:
 		std::string _texture,
 		glm::dvec3 _pos,
 		glm::dvec4 _rotation,
-		double _Scale);
+		double _Scale,
+		double _radius);
 
 	virtual ~PhysObj();
 
-	virtual void Update(double dt, int _timeStep);
+	virtual void Update(double _dt, int _timeStep);
 
 
 	virtual void Draw(Camera* cam);
@@ -48,6 +49,12 @@ public:
 	//scale
 	double GetScale();
 	void SetScale(double _scale);
+
+	glm::mat4 GetModel();
+	void SetModel(glm::mat4 _model);
+
+	double GetRadius();
+	void SetRadius(double _radius);
 
 	float timeAlive = 0.0f;
 
@@ -69,5 +76,6 @@ protected:
 	glm::dvec3 pos;
 	glm::vec4 rotation;
 	double scale; //in the case of sphere is radius
+	double radius;
 
 };

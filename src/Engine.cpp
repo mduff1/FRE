@@ -58,12 +58,27 @@ int Engine::run()
 
 		SDL_GL_SwapWindow(window);
 		handleEvents();
-		while (accumulator >= dt)
-		{
-			simulation->Update(dt, t);
+
+			//making initial render, and then pausing simulation until key press. reduces lag in beginning
+			if (t == 0.0)
+			{
+				simulation->isPaused = false;
+				simulation->Update(dt);
+				simulation->isPaused = true;
+
+			}
+			simulation->Update(dt);
 			renderer->Render(dt, simulation->curPE->vPObjects);
-			accumulator -= dt;
 			t += dt;
+		
+
+		gotoxy(0, 45);
+		std::cout << frameTime << std::endl;
+		gotoxy(0, 45);
+
+		if (0.006 > (frameTime))
+		{
+			SDL_Delay(0.006 - frameTime);
 		}
 
 	}
@@ -107,22 +122,18 @@ void Engine::handleEvents()
 				break;
 
 				//scene stuff
-			case SDLK_1:
-			{
-				//RigidBody::rigBodAttributes planetAttrib;
-				//planetAttrib.mass = 1.0f;
-				//planetAttrib.vel = glm::vec3(1.0f, 0.0f, 0.0f);
-				//planetAttrib.acc = glm::vec3(0.0f, 0.0f, 0.0f);
-				//
-				//x += 5;
-				//Planet* planet(new Planet("Carbon_03.bmp", glm::vec3(x, 0.0f, 0.0f), glm::vec4(0.5f, 0.0f, 1.0f, 0.0f), 1.0f, planetAttrib));
-				//renderer->curScene->AddObject(planet);
-			}
+			case SDLK_SPACE:
+				simulation->isPaused = !(simulation->isPaused);
 				break;
 
-			case SDLK_DELETE:
-				//renderer->curScene->RemoveObject();
+			case SDLK_RIGHT:
+				simulation->curPE->timeStep *= 10;
 				break;
+
+			case SDLK_LEFT:
+				simulation->curPE->timeStep /= 10;
+				break;
+			
 			}
 		}
 		if (event.type == SDL_QUIT)
@@ -171,6 +182,7 @@ void Engine::createGLWindow(const char* title, int xpos, int ypos, int width, in
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
 	glContext = SDL_GL_CreateContext(window);
+	SDL_GL_SetSwapInterval(1);
 	SDL_GL_MakeCurrent(window, glContext);
 
 	glViewport(0, 0, width, height);

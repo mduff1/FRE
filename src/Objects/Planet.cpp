@@ -13,7 +13,7 @@ void Planet::Update(double dt, int _timeStep)
 	
 	
 		//rotation
-		model = glm::rotate(model, glm::radians(rotation[0]), glm::vec3(rotation[1], rotation[2], rotation[3]));
+		//model = glm::rotate(model, glm::radians(rotation[0]), glm::vec3(rotation[1], rotation[2], rotation[3]));
 	}
 		
 }

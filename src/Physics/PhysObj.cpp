@@ -12,7 +12,8 @@ PhysObj::PhysObj(
 	std::string _texture,
 	glm::dvec3 _pos,
 	glm::dvec4 _rot,
-	double _scale)
+	double _scale,
+	double _radius)
 {
 	pos = _pos;
 	rotation = _rot;
@@ -42,7 +43,7 @@ PhysObj::~PhysObj()
 
 };
 
-void PhysObj::Update(double dt, int _timeStep) 
+void PhysObj::Update(double _dt, int _timeStep) 
 {
 
 }
@@ -61,7 +62,7 @@ void PhysObj::Draw(Camera* cam)
 		{
 			texture->Use();
 		}
-		projection = glm::perspective(glm::radians(cam->Zoom), (double)sWidth / (double)sHeight, 1.0, 149000.0);
+		projection = glm::perspective(glm::radians(cam->Zoom), (double)sWidth / (double)sHeight, 1.0, 149000000000.0);
 		glUniformMatrix4fv(glGetUniformLocation(shader->progID, "projection"), 1, GL_FALSE, &projection[0][0]);
 
 		view = cam->GetViewMatrix();
@@ -109,3 +110,31 @@ void PhysObj::SetScale(double _scale)
 {
 	scale = _scale;
 }
+
+
+double PhysObj::GetRadius()
+{
+	return radius;
+}
+
+
+void PhysObj::SetRadius(double _radius)
+{
+	radius = _radius;
+}
+
+
+
+
+glm::mat4 PhysObj::GetModel()
+{
+	return model;
+}
+
+void PhysObj::SetModel(glm::mat4 _model)
+{
+	model = _model;
+}
+
+
+

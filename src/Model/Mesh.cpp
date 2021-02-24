@@ -62,8 +62,8 @@ Mesh::Mesh(const std::string& fname)
 	for (int i = 0; i < indices.size(); i += 3)
 	{
 		int i0 = indices[i];
-		int i1 = indices[i + 1];
-		int i2 = indices[i + 2];
+		int i1 = indices[i + int(1)];
+		int i2 = indices[i + int(2)];
 
 		glm::vec3 v1 = vertices[i1].pos - vertices[i0].pos;
 		glm::vec3 v2 = vertices[i2].pos - vertices[i2].pos;

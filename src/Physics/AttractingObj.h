@@ -11,6 +11,7 @@ public:
 		glm::dvec3 _pos,
 		glm::dvec4 _rot,
 		double _scale,
+		double _radius,
 		RigidBody::rigBodAttributes _attrib);
 
 	~AttractingObj() {};
@@ -20,7 +21,7 @@ public:
 	//for elliptical orbits
 	//void CalculateInitialVelocity(AttractingObj* oObject, )
 
-	virtual void Update(double dt, int _timeStep) override;
+	virtual void Update(double _dt, int _timeStep) override;
 
 	RigidBody* rigidBody;
 

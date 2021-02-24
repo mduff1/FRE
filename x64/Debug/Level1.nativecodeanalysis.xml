@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Programming\OpenGL\Directories\include\SDL\</FILEPATH>
+      <FILENAME>SDL_rect.h</FILENAME>
+      <LINE>102</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'SDL_bool' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>SDL_PointInRect</FUNCTION>
+    <DECORATED>SDL_PointInRect</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Programming\C++\OpenGL Projects\FRE\FRE\src\Camera\</FILEPATH>
+      <FILENAME>Camera.h</FILENAME>
+      <LINE>78</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26812</DEFECTCODE>
+    <DESCRIPTION>The enum type 'Camera_Movement' is unscoped. Prefer 'enum class' over 'enum' (Enum.3).</DESCRIPTION>
+    <FUNCTION>Camera::ProcessCamPos</FUNCTION>
+    <DECORATED>?ProcessCamPos@Camera@@QEAAXW4Camera_Movement@@N@Z</DECORATED>
+    <FUNCLINE>78</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Programming\C++\OpenGL Projects\FRE\FRE\src\Physics\</FILEPATH>
+      <FILENAME>nonAttractingObj.h</FILENAME>
+      <LINE>9</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'nonAttractingObj::rigidBody' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>nonAttractingObj::{ctor}</FUNCTION>
+    <DECORATED>??0nonAttractingObj@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$vec@$02N$0A@@glm@@U?$vec@$03N$0A@@4@NUrigBodAttributes@RigidBody@@@Z</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>nonAttractingObj::rigidBody</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

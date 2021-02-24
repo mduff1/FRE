@@ -27,9 +27,19 @@ public:
 		glm::dvec3 vel;
 		glm::dvec3 acc;
 
+		double angle = 0.0;
+		double angAcc = 0.0;
+
 		//physical attributes
 		double mass;
 		double density;
+
+		//orbital characterisitics
+		double oEccentricity;
+		double oSemiMajorAxis;
+		double oPeriod;
+
+
 
 		PhysObj* object;
 
@@ -39,8 +49,10 @@ public:
 
 
 	RigidBody(rigBodAttributes attributes);
+	~RigidBody();
+
 	void ApplyForce(glm::dvec3 forceVector);
-	virtual void UpdatePhysics(double dt, int _timeStep);
+	virtual void UpdatePhysics(double _dt, int _timeStep);
 
 
 	//getters and setters
@@ -61,7 +73,13 @@ public:
 	double GetMass();
 	void SetMass(double _mass);
 
-	~RigidBody();
+	//eccentricity
+	double GetEcc();
+	void SetEcc(double _ecc);
+
+
+
+
 
 	double timeStep;
 
