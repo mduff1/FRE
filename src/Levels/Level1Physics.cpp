@@ -9,7 +9,7 @@ void Level1Physics::load()
 	sunAttrib.vel = glm::vec3(0.0, 0.0, 0.0);
 	sunAttrib.acc = glm::vec3(0.0, 0.0, 0.0);
 	
-	Planet* Sun(new Planet("Solar System/2k_sun.jpg", glm::dvec3(0.0, 0.0, 0.0), glm::dvec4(-2000.0, 0.0, -1.0, 0.0), 20.0, solarRadius, sunAttrib));
+	Planet* Sun(new Planet("Solar System/2k_sun.jpg", glm::dvec3(0.0, 0.0, 0.0), glm::dvec4(-2000.0, 0.0, 1.0, 0.0), 15.0, solarRadius, sunAttrib));
 	vAObjects.push_back(Sun);
 	
 	//////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ void Level1Physics::load()
 	venusAttrib.vel = glm::vec3(0.0, 0.0, 0.0);
 	venusAttrib.acc = glm::vec3(0.0, 0.0, 0.0);
 	
-	Planet* Venus(new Planet("Solar System/2k_venus_atmosphere.jpg", glm::dvec3(0.72 * AU, 0.0, 0.0), glm::dvec4(-1.81, 0.0, 0.92, 0.39), 10.0, 0.950 * earthRadius, venusAttrib));
+	Planet* Venus(new Planet("Solar System/2k_venus_atmosphere.jpg", glm::dvec3(0.72 * AU, 0.0, 0.0), glm::dvec4(-1.81, 0.0, 1.0, 0.0), 10.0, 0.950 * earthRadius, venusAttrib));
 	vAObjects.push_back(Venus);
 	Venus->CalculateInitialVelocity(Sun, CalculateForceVector(Venus->GetPos() - Sun->GetPos(), Venus, Sun), glm::dvec3(0.0, 0.0, -1.0));
 	
@@ -42,7 +42,7 @@ void Level1Physics::load()
 	earthAttrib.vel = glm::vec3(0.0, 0.0, 0.0);
 	earthAttrib.acc = glm::vec3(0.0, 0.0, 0.0);
 	
-	Planet* Earth(new Planet("Solar System/2k_earth_daymap.jpg", glm::dvec3(1.0 * AU, 0.0, 0.0), glm::dvec4(-465.0, 0.0, 1.0, 0.0), 10.0, earthRadius, earthAttrib));
+	Planet* Earth(new Planet("Solar System/2k_earth_daymap.jpg", glm::dvec3(1.0 * AU, 0.0, 0.0), glm::dvec4(-465.0, 0.39, 0.92, 0.0), 10.0, earthRadius, earthAttrib));
 	vAObjects.push_back(Earth);
 	Earth->CalculateInitialVelocity(Sun, CalculateForceVector(Earth->GetPos() - Sun->GetPos(), Earth, Sun), glm::dvec3(0.0, 0.0, -1.0));
 	

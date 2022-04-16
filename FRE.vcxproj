@@ -87,6 +87,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Maths\Quaternion.cpp" />
     <ClCompile Include="src\Levels\Level1Physics.cpp" />
     <ClCompile Include="src\Physics\nonAttractingObj.cpp" />
     <ClCompile Include="src\Physics\AttractingObj.cpp" />
@@ -120,6 +121,7 @@
     <Text Include="Shaders\cube.frag" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Maths\Quaternion.h" />
     <ClInclude Include="src\Levels\Level1Physics.h" />
     <ClInclude Include="src\Physics\nonAttractingObj.h" />
     <ClInclude Include="src\Physics\AttractingObj.h" />

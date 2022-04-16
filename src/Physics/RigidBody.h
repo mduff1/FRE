@@ -39,6 +39,7 @@ public:
 		double oSemiMajorAxis;
 		double oPeriod;
 
+	
 
 
 		PhysObj* object;
@@ -80,7 +81,6 @@ public:
 
 
 
-
 	double timeStep;
 
 	std::vector<glm::vec3> stepsTaken;
@@ -88,7 +88,7 @@ public:
 protected:
 
 	rigBodAttributes rBAttributes;
-
+	
 	 
 	double x = 0;
 	double y = 0;

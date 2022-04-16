@@ -14,7 +14,7 @@ public:
 		RigidBody::rigBodAttributes _attrib) : AttractingObj(_texture, _pos, _rot, _scale, _radius, _attrib)
 	{
 		pos = _pos;
-		rotation = _rot;
+		rot = _rot;
 		_attrib.object = this;
 		scale = _scale;
 		radius = _radius;

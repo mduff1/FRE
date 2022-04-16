@@ -46,7 +46,7 @@ public:
 	};
 
 	//time step
-	int timeStep = 2160000;
+	int timeStep = 216000;
 
 	
 	std::vector<PhysObj*> vPObjects;

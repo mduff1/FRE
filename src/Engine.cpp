@@ -131,7 +131,9 @@ void Engine::handleEvents()
 				break;
 
 			case SDLK_LEFT:
-				simulation->curPE->timeStep /= 10;
+				if (simulation->curPE->timeStep > 10) {
+					simulation->curPE->timeStep /= 10;
+				}
 				break;
 			
 			}

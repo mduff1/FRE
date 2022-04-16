@@ -74,7 +74,7 @@ protected:
 
 	//attributes
 	glm::dvec3 pos;
-	glm::vec4 rotation;
+	glm::vec4 rot;
 	double scale; //in the case of sphere is radius
 	double radius;
 
