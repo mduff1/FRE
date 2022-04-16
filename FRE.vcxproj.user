@@ -4,12 +4,12 @@
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LocalDebuggerEnvironment>PATH=C:\Programming\OpenGL\Directories\Libs;$(path)
+    <LocalDebuggerEnvironment>PATH=E:\Programming\OpenGL\Directories\Libs;$(path)
 $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerEnvironment>PATH=C:\Programming\OpenGL\Directories\Libs;$(path)
+    <LocalDebuggerEnvironment>PATH=E:\Programming\OpenGL\Directories\Libs;$(path)
 $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>

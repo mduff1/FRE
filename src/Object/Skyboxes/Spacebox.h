@@ -1,14 +1,14 @@
 #pragma once
-#include "../Object/Skybox.h"
+#include "Skybox.h"
 #include <iostream>
 
-class SpaceBox : public Skybox
+class Spacebox : public Skybox
 {
 public:
-	SpaceBox(
+	Spacebox(
 		glm::vec3 _initPos,
 		glm::vec4 _initRotation,
-		float _oScale) : Skybox(_initPos, _initRotation, _oScale)
+		double _oScale) : Skybox(_initPos, _initRotation, _oScale)
 	{
 		mesh = new Mesh("Skybox.obj");
 		shader = new Shader("Skybox");
@@ -26,7 +26,7 @@ public:
 		texture = new Texture(faces);
 
 	}
-	~SpaceBox() {}
+	~Spacebox() {}
 
 
 }; 

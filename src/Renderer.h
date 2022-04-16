@@ -1,5 +1,5 @@
 #pragma once
-#include "Scene.h"
+#include "Scene/Scene.h"
 #include "Levels/Level1.h"
 #include "Camera/Camera.h"
 

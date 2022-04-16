@@ -1,9 +1,9 @@
 #include "Level1.h"
-#include "../Objects/Cube.h"
-#include "../Objects/Sphere.h"
-#include "../Skyboxes/SpaceBox.h"
-#include "../Objects/Planet.h"
-#include "../Objects/Plane.h"
+//#include "../Objects/Cube.h"
+//#include "../Objects/Sphere.h"
+#include "../Object/Skyboxes/Spacebox.h"
+//#include "../Objects/Planet.h"
+//#include "../Objects/Plane.h"
 
 
 void Level1::load()
@@ -19,7 +19,6 @@ void Level1::load()
 	//vObjects.push_back(cube);
 
 	//skybox
-	SpaceBox* SpaceBox(new SpaceBox(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec4(0.0f, 0.0f, 1.0f, 0.0f), 1.0f));
-	vSkyboxes.push_back(SpaceBox);
-
+	Spacebox* spacebox(new Spacebox(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec4(0.0f, 0.0f, 1.0f, 0.0f), 1.0f));
+	vSkyboxes.push_back(spacebox);
 }

@@ -8,7 +8,6 @@
 #include <glm/gtc/matrix_access.hpp>
 #include <vector>
 #include <SDL/SDL.h>
-#include "../Maths/MathAlgorithms.h"
 #include "PhysObj.h"
 
 

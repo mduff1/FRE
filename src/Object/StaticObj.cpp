@@ -12,8 +12,8 @@ StaticObj::StaticObj()
 
 StaticObj::StaticObj(std::string _texture, glm::dvec3 _pos, glm::dvec4 _rotation, double _oScale)
 {
-	pos = _pos;
-	rotation = _rotation;
+	pos       = _pos;
+	rotation  = _rotation;
 	oScale    = _oScale;
 
 	//position

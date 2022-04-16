@@ -48,13 +48,7 @@
     <ClCompile Include="src\Scene\Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Object\Skybox.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Objects\Plane.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Maths\MathAlgorithms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Objects\Planet.cpp">
@@ -82,9 +76,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Physics\nonAttractingObj.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Maths\Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -142,13 +133,10 @@
     <ClInclude Include="src\Scene\Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Object\Skybox.h">
+    <ClInclude Include="src\Object\Skyboxes\Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Skyboxes\SpaceBox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Maths\MathAlgorithms.h">
+    <ClInclude Include="src\Object\Skyboxes\Spacebox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Objects\Plane.h">
@@ -176,9 +164,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Physics\AttractingObj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Maths\Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

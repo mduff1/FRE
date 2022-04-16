@@ -1,11 +1,12 @@
 #pragma once
 #include <GL/glew.h>
-#include "../Object/StaticObj.h"
+//#include "../Object/StaticObj.h"
 #include "../Physics/Physobj.h"
 #include "../Objects/Cube.h"
 #include "../Objects/Sphere.h"
-#include "../Skyboxes/SpaceBox.h"
-#include "../Objects/Planet.h"
+#include "../Object/Skyboxes/Skybox.h"
+//#include "../Object/Skyboxes/Spacebox.h"
+//#include "../Objects/Planet.h"
 #include "../Physics/PhysicsEnvironment.h"
 #include <cMath>
 #include <iostream>

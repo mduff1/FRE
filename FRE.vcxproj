@@ -44,13 +44,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Programming\OpenGL\Directories\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Programming\OpenGL\Directories\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Programming\OpenGL\Directories\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Programming\OpenGL\Directories\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Programming\OpenGL\Directories\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Programming\OpenGL\Directories\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Programming\OpenGL\Directories\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Programming\OpenGL\Directories\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -58,13 +58,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programming\OpenGL\Directories\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Programming\OpenGL\Directories\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>assimp-vc142-mtd.lib;glew32.lib;SDL2.lib;SDL2main.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Programming\OpenGL\Directories\Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Programming\OpenGL\Directories\Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -75,7 +75,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programming\OpenGL\Directories\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Programming\OpenGL\Directories\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -83,20 +83,17 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>assimp-vc142-mtd.lib;glew32.lib;SDL2.lib;SDL2main.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Programming\OpenGL\Directories\Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Programming\OpenGL\Directories\Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Maths\Quaternion.cpp" />
     <ClCompile Include="src\Levels\Level1Physics.cpp" />
     <ClCompile Include="src\Physics\nonAttractingObj.cpp" />
     <ClCompile Include="src\Physics\AttractingObj.cpp" />
     <ClCompile Include="src\Physics\PhysicsEnvironment.cpp" />
     <ClCompile Include="src\Physics\Simulation.cpp" />
-    <ClCompile Include="src\Maths\MathAlgorithms.cpp" />
     <ClCompile Include="src\Objects\Plane.cpp" />
     <ClCompile Include="src\Objects\Planet.cpp" />
-    <ClCompile Include="src\Object\Skybox.cpp" />
     <ClCompile Include="src\Physics\RigidBody.cpp" />
     <ClCompile Include="src\Physics\PhysObj.cpp" />
     <ClCompile Include="src\Levels\Level1.cpp" />
@@ -121,15 +118,13 @@
     <Text Include="Shaders\cube.frag" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Maths\Quaternion.h" />
     <ClInclude Include="src\Levels\Level1Physics.h" />
     <ClInclude Include="src\Physics\nonAttractingObj.h" />
     <ClInclude Include="src\Physics\AttractingObj.h" />
     <ClInclude Include="src\Physics\PhysicsEnvironment.h" />
     <ClInclude Include="src\Physics\Simulation.h" />
-    <ClInclude Include="src\Maths\MathAlgorithms.h" />
     <ClInclude Include="src\Objects\Plane.h" />
-    <ClInclude Include="src\Object\Skybox.h" />
+    <ClInclude Include="src\Object\Skyboxes\Skybox.h" />
     <ClInclude Include="src\Objects\Planet.h" />
     <ClInclude Include="src\Physics\RigidBody.h" />
     <ClInclude Include="src\Physics\PhysObj.h" />
@@ -143,7 +138,7 @@
     <ClInclude Include="src\Object\StaticObj.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\Objects\Cube.h" />
-    <ClInclude Include="src\Skyboxes\SpaceBox.h" />
+    <ClInclude Include="src\Object\Skyboxes\Spacebox.h" />
     <ClInclude Include="src\Objects\Sphere.h" />
     <ClInclude Include="src\Model\stb_image.h" />
     <ClInclude Include="src\Model\VertexBuffer.h" />

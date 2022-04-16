@@ -44,8 +44,6 @@ AttractingObj::AttractingObj(
 		cP = glm::normalize(cP);
 	}
 
-	
-	Quaternion quat = Quaternion();
 
 	
 
